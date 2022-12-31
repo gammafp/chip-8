@@ -1,13 +1,13 @@
-import React from 'react';
 import { Stack } from '../chip-8/core/Stack';
 
 describe("Pruebas del módulo de STACK FIFO", () => {
 
+    // Nos ayuda a saber si hay algún console.error en las pruebas
     beforeAll(() => {
-        jest.spyOn(global.console, 'error').mockImplementation(() => { });
+        jest.spyOn(globalThis.console, 'error').mockImplementation(() => { });
     });
     afterAll(() => {
-        (global.console.error as any).mockRestore();
+        (globalThis.console.error as any).mockRestore();
     });
 
 
@@ -55,17 +55,17 @@ describe("Pruebas del módulo de STACK FIFO", () => {
         expect(console.error).toHaveBeenCalledTimes(1)
     });
 
-    test("Prueba de llenado una vez más", () => {
-        stack(0x0078); // Overflow! Se espera 0x0083
+    // test("Prueba de llenado una vez más", () => {
+    //     stack(0x0078); // Overflow! Se espera 0x0083
 
-        expect(0x0083).toEqual(stack());
-        expect(0x0091).toEqual(stack());
+    //     expect(0x0083).toEqual(stack());
+    //     expect(0x0091).toEqual(stack());
 
-        // Ya se ha liberado espacio y se puede meter más elementos
-        stack(0x0071);
-        expect(0x0071).toEqual(stack());
-        // stack(0x0090);
-        // expect(stack()).toEqual(0x0090);
-        // expect(stack()).toEqual(0x0078);
-    });
+    //     // Ya se ha liberado espacio y se puede meter más elementos
+    //     stack(0x0071);
+    //     expect(0x0071).toEqual(stack());
+    //     // stack(0x0090);
+    //     // expect(stack()).toEqual(0x0090);
+    //     // expect(stack()).toEqual(0x0078);
+    // });
 });

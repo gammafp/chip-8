@@ -3,7 +3,10 @@ export const Stack = () => {
     const zero = 0x0000;
     const stack = new Uint16Array(16); // Short stack
     let stackPointer = 0;
-    return (value?: number) => {
+
+    // TODO: Implement reset Memory.
+
+    const setStackValue = (value?: number) => {
         // if (reset) {
         //     stack.fill(zero);
         //     stackPointer = 0;
@@ -32,4 +35,6 @@ export const Stack = () => {
             }
         }
     };
+
+    return setStackValue;
 }

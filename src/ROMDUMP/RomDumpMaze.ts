@@ -1,3 +1,4 @@
+// DUMP from Maze (c) 1978 Atari, Inc. Test purposes only.
 const RomDumpMazeArray = new Uint8Array(34);
 RomDumpMazeArray[0] = 0xA2;
 RomDumpMazeArray[1] = 0x1E;
