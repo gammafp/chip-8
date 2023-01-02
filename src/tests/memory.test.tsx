@@ -7,13 +7,10 @@ describe("Pruebas del módulo de memoria", () => {
     const memory = Memory();
     const memoryToZero = clone(memory.getArray());
 
-    // RomDumpMaze.forEach((byte, index) => {
     memory.setDumpRom(RomDumpMaze);
-    // });
-    // console.log(" La memory bugatty ", memory.getArray().slice(padding, 34 + padding));
 
     test("Dump: ", () => {
-        expect(memory.getArray().slice(padding, padding + 34)).toMatchObject(RomDumpMaze);
+        expect(memory.getArray().slice(padding, padding + 48)).toMatchObject(RomDumpMaze);
     });
 
     test("Eliminar un espacio en memoria", () => {
@@ -24,6 +21,5 @@ describe("Pruebas del módulo de memoria", () => {
     test("Comprueba reset memoria to zero", () => {
         memory.resetMemory();
         expect(memory.getArray()).toMatchObject(memoryToZero);
-    })
-
+    });
 });
