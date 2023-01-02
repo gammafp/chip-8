@@ -2,7 +2,7 @@
 export const Stack = () => {
     const zero = 0x0000;
     const stack = new Uint16Array(16); // Short stack
-    let stackPointer = 0;
+    let stackPointer = 0; // SP
 
     // TODO: Implement reset Memory.
 
