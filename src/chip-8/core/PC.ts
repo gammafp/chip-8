@@ -11,7 +11,8 @@ const PCInit = () => {
         // Resetear PC
         reset: () => pc = PCOffset,
         // Incrementar PC
-        increment: () => pc += 2
+        increment: (multiplied = 1) => pc += 2,
+        incrementNext: () => pc += 4
     })
 }
 

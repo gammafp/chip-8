@@ -1,4 +1,4 @@
-export const RegistersV = () => {
+export const VRegisters = () => {
     const registers = new Uint8Array(16).fill(0x00);
 
     return {

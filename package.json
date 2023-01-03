@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "chip-8-console": "node --experimental-specifier-resolution=node --loader ts-node/esm src/chip-8/chip-8-console.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -26,6 +27,7 @@
     "url": "https://gammafp.com"
   },
   "dependencies": {
+    "chalk": "^5.2.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
