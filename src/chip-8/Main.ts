@@ -1,14 +1,24 @@
 import { RomDumpMaze } from "../ROMDUMP/RomDumpMaze";
 import { Memory } from "./core/Memory";
+import { PC } from "./core/PC";
+import { opCodeFinder } from "./helpers";
 
 export const Main = () => {
-    console.log("Hello, world!");
+    const pc = PC();
     const memory = Memory();
-
-    memory.setDumpRom(RomDumpMaze);
     
-    // Print table console.log memory in hexadecimal
-    console.log("La memoria ", memory.getArrayHex().slice(0x200, 512 + 48));
+    pc.increment();
+    pc.increment();
+    pc.increment();
+   
+    
+    console.log("PC: ", pc.get());
+    memory.setDumpRom(RomDumpMaze);
+
+    const firstValue = memory.getWord(pc.get());
+    console.log("Componentes del chip-8 opcode: ", opCodeFinder(firstValue));
+
+    console.log("Primer valor: ", firstValue.toString(16).padStart(4, '0').toUpperCase());
 
     return "Hellow World de carallo!";
 }

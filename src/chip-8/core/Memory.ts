@@ -1,3 +1,5 @@
+import { PC } from "./PC";
+
 export type TMemoryReturn = {
     memory: Uint8Array
 }
@@ -6,6 +8,8 @@ export const Memory = () => {
     return {
         // Obtiene el valor de una posición de memoria
         get: (address: number) => memory[address],
+        // Obtiene una palabra (word)
+        getWord: (address: number) => memory[address] << 8 | memory[address + 1],
         // Asigna un valor a una posición de memoria
         set: (address: number, value: number) => memory[address] = value,
         // Pone a cero una posición de memoria

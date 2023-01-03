@@ -1,8 +1,18 @@
-export const opCodeFinder = (memory: Uint8Array) => {
-    return (pc: number) => {
-        // Get opcode from memory (16bits/2bytes).
-        // 1) Get the first byte from memory and shift it 8 bits to the left.
-        // 2) Get the second byte from memory and add it to the first byte.
-        return (memory[pc] << 8) | memory[pc + 1];
+export const opCodeFinder = (opcode: number) => {
+    // 0x6000 -> 0x6nnn
+    const x = (opcode & 0x0F00) >> 8;
+    const y = (opcode & 0x00F0) >> 4;
+    const n = opcode & 0x000F;
+    // const nn = opcode & 0x00FF;
+    const nnn = opcode & 0x0FFF;
+    const instruction = (opcode & 0xF000) >> 12;
+
+    return { 
+        instruction,
+        x,
+        y,
+        n,
+        // nn,
+        nnn
     };
 }
