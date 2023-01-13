@@ -8,7 +8,7 @@ Install dependencies
 
 Execute: 
 ```bash
-npm run vite
+> npm run vite
 ```
 
 ![Chip 8 example](https://i.gyazo.com/10d6eb0aceb3840e1efa9e08710d3039.png)
