@@ -8,6 +8,8 @@ export const Memory = () => {
     return {
         // Obtiene el valor de una posición de memoria
         get: (address: number) => memory[address],
+        // Obtiene un trozo de memoria
+        getSprite: (start: number, end: number) => memory.slice(start, start + end),
         // Obtiene una palabra (word)
         getWord: (address: number) => memory[address] << 8 | memory[address + 1],
         // Asigna un valor a una posición de memoria

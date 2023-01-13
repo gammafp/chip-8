@@ -14,6 +14,8 @@ export const VRegisters = () => {
         getArrayHex: () => {
             const newRegistersBuffer = Array.from(new Uint8Array(registers.buffer))
             return newRegistersBuffer.map(x => x.toString(16).padStart(2, '0').toUpperCase());
-        }
+        },
+        // Nos ayudará a resetear los registros
+        reset: () => registers.fill(0x00)
     }
 }
